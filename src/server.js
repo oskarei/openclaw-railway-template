@@ -1031,7 +1031,7 @@ function createTuiWebSocketServer(httpServer) {
       if (ptyProcess) return;
 
       log.info("tui", `spawning PTY with ${cols}x${rows}`);
-      ptyProcess = pty.spawn(OPENCLAW_NODE, clawArgs(["tui"]), {
+      ptyProcess = pty.spawn("/bin/bash", [], {
         name: "xterm-256color",
         cols,
         rows,
